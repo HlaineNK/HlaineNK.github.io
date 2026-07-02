@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photography — Hlaine Nadi Khant</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-left">
+        <span class="nav-name">HNK</span>
+        <span class="nav-year">2026</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="background.html">Background</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="photography.html" class="active">Photography</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <p class="hello">FILM & DIGITAL</p>
+      <h1 class="big-name">Photography</h1>
+      <p class="photo-intro">A collection of moments captured on film, mostly in black and white.</p>
+    </section>
+
+    <!-- Carousel -->
+    <section class="carousel-section">
+      <div class="carousel-wrapper">
+
+
+        <!-- Slides -->
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide">
+            <img src="images/image2.jpeg" alt="Film photo 1" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image3.jpeg" alt="Film photo 2" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image4.jpeg" alt="Film photo 3" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image5.jpeg" alt="Film photo 4" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image6.jpeg" alt="Film photo 5" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image7.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image8.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image9.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image10.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image11.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image12.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image13.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image14.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image15.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image16.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image17.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image18.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image19.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image20.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image21.jpeg" alt="Film photo 6" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/image22.jpeg" alt="Film photo 6" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dots -->
+      <div class="carousel-dots" id="carouselDots"></div>
+
+      
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Hlaine Nadi Khant - Portfolio (2026)</p>
+    </footer>
+
+    <script>
+  const wrapper = document.querySelector('.carousel-wrapper');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  wrapper.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - wrapper.offsetLeft;
+    scrollLeft = wrapper.scrollLeft;
+  });
+
+  wrapper.addEventListener('mouseleave', () => isDown = false);
+  wrapper.addEventListener('mouseup', () => isDown = false);
+
+  wrapper.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - wrapper.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    wrapper.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch support for mobile
+  wrapper.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].pageX - wrapper.offsetLeft;
+    scrollLeft = wrapper.scrollLeft;
+  });
+
+  wrapper.addEventListener('touchmove', (e) => {
+    const x = e.touches[0].pageX - wrapper.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    wrapper.scrollLeft = scrollLeft - walk;
+  });
+</script>
+  </body>
+</html>
